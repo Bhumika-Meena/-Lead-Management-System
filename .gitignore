@@ -1,0 +1,41 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+
+# dotenv environment variables
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build output
+/build
+/dist
+
+# Vercel/Netlify
+.vercel
+.netlify
+
+# Frontend
+lms-frontend/node_modules/
+lms-frontend/build/
+lms-frontend/.env
+lms-frontend/.env.*
+
+# Backend
+backend/node_modules/
+backend/.env
+backend/.env.*
+
+# Misc
+*.local
+.idea/
+.vscode/ 
