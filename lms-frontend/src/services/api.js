@@ -39,10 +39,10 @@ api.interceptors.response.use(
 
 // Auth API
 export const authAPI = {
-  login: (credentials) => api.post('/auth/login', credentials),
-  register: (userData) => api.post('/auth/register', userData),
-  getProfile: () => api.get('/auth/profile'),
-  updateProfile: (data) => api.put('/auth/profile', data),
+  login: (credentials) => api.post('/api/auth/login', credentials),
+  register: (userData) => api.post('/api/auth/register', userData),
+  getProfile: () => api.get('/api/auth/profile'),
+  updateProfile: (data) => api.put('/api/auth/profile', data),
   // Mocked confirmation flows:
   requestEmailChange: (newEmail) => Promise.resolve({ data: { message: 'Confirmation email sent', token: 'mock-email-token' } }),
   confirmEmailChange: (token) => Promise.resolve({ data: { message: 'Email changed successfully' } }),
