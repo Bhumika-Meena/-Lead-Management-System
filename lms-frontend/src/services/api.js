@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://lead-management-system-vzgu.onrender.com';
+const API_BASE_URL = 'https://lead-management-system-3z38.onrender.com';
 
 // Create axios instance
 const api = axios.create({
