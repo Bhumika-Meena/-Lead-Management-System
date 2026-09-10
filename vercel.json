@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm --prefix lms-frontend run build",
+  "outputDirectory": "lms-frontend/build",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
