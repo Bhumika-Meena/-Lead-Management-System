@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Box,
   Card,
@@ -26,13 +26,11 @@ import {
   CircularProgress,
   Alert,
   Grid,
-  InputAdornment,
 } from '@mui/material';
 import {
   Add,
   Edit,
   Delete,
-  Search,
   Visibility,
   Assignment,
 } from '@mui/icons-material';
@@ -59,14 +57,7 @@ const Leads = () => {
   const { isAdmin } = useAuth();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetchLeads();
-    if (isAdmin) {
-      fetchUsers();
-    }
-  }, [filters]);
-
-  const fetchLeads = async () => {
+  const fetchLeads = useCallback(async () => {
     try {
       setLoading(true);
       const params = { ...filters };
@@ -82,16 +73,23 @@ const Leads = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [filters]);
 
-  const fetchUsers = async () => {
+  const fetchUsers = useCallback(async () => {
     try {
       const response = await usersAPI.getAll();
       setUsers(response.data.users || []);
     } catch (err) {
       console.error('Users error:', err);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchLeads();
+    if (isAdmin) {
+      fetchUsers();
+    }
+  }, [fetchLeads, fetchUsers, isAdmin]);
 
   const handleFilterChange = (field, value) => {
     setFilters(prev => ({ ...prev, [field]: value }));

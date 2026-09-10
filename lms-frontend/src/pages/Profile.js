@@ -11,14 +11,9 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogActions,
 } from '@mui/material';
 import { authAPI, otpAPI } from '../services/api';
 import { useAuth } from '../contexts/AuthContext';
-
-function formatDate(date) {
-  return new Date(date).toLocaleString();
-}
 
 const Profile = () => {
   const { user, setUser } = useAuth();

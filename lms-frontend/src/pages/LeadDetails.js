@@ -26,7 +26,6 @@ import {
 } from '@mui/material';
 import { ArrowBack, Add, Phone, Email, Event, Note, Edit, Delete } from '@mui/icons-material';
 import { leadsAPI, activitiesAPI } from '../services/api';
-import { useAuth } from '../contexts/AuthContext';
 
 const activityTypes = [
   { value: 'Call', label: 'Call', icon: <Phone /> },
@@ -54,7 +53,6 @@ const getStatusColor = (status) => {
 const LeadDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { user } = useAuth();
   const [lead, setLead] = useState(null);
   const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
