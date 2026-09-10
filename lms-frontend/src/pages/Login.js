@@ -139,7 +139,7 @@ const Login = () => {
             </Button>
           </Box>
 
-          {/* <Box sx={{ mt: 3, textAlign: 'center' }}>
+          {<Box sx={{ mt: 3, textAlign: 'center' }}>
             <Typography variant="body2" color="text.secondary">
               Demo Credentials:
             </Typography>
@@ -149,7 +149,7 @@ const Login = () => {
             <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'monospace' }}>
               Sales: sales@example.com / password123
             </Typography>
-          </Box> */}
+          </Box> }
         </Paper>
       </Box>
     </Container>
